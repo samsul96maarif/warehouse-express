@@ -1,0 +1,60 @@
+### REGISTER
+POST http://localhost:8000/auth/register
+Content-Type: application/json
+
+{
+  "id": 2,
+  "password": "localhost"
+}
+
+### VALIDATE PASSWORD
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+  "id": 1,
+  "password": "localhost"
+}
+
+### CREATE
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+  "name": "jeruk",
+  "price": "3000"
+}
+
+### READ AVAILABLE ARGS(NAME, PRICE)
+GET http://localhost:8000/products
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "jeruk"
+}
+
+### READ BY ID
+GET http://localhost:8000/products/1
+Accept: application/json
+
+### UPDATE
+PUT http://localhost:8000/products/1
+Content-Type: application/json
+
+{
+  "name": "jeruk",
+  "price": 5000
+}
+
+### DELETE
+DELETE http://localhost:8000/products/9
+
+### GET TOTAL PRODUCT FROM MINIMUM PRICE
+GET http://localhost:8000/products/total
+Accept: application/json
+Content-Type: application/json
+
+{
+  "min": 300
+}
